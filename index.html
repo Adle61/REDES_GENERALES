@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guía completa sobre configuración básica de redes, IPv4 y direccionamiento IP">
+    <title>Redes  | Guía Básica</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#inicio" class="logo">
+                <span class="logo-icon">🌐</span>
+                <span>Red<span class="accent">ES</span></span>
+            </a>
+
+            <!-- BOTÓN MODO OSCURO -->
+            <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+            </button>
+
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#conceptos">Conceptos Base</a></li>
+                <li><a href="#ipv4">IPv4 y Clases</a></li>
+                <li><a href="#direccionamiento">Direccionamiento</a></li>
+                <li><a href="#elementos">Elementos</a></li>
+                <li><a href="#arquitectura">Arquitectura</a></li>
+                <li><a href="#ipconfig">ipconfig</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO con fondo animado -->
+    <section class="hero" id="inicio">
+        <canvas id="networkCanvas" class="hero-canvas"></canvas>
+        <div class="container hero-content">
+            <h1>Configuración Básica de una <span class="accent">Red de Cómputo</span></h1>
+            <p>Aprende los fundamentos: IPv4, clases de red, direccionamiento IP y los elementos esenciales para configurar una red pequeña.</p>
+            <a href="#conceptos" class="btn">Comenzar </a>
+        </div>
+    </section>
+
+    <!-- CONCEPTOS BASE con FLIP -->
+    <section class="section" id="conceptos">
+        <div class="container">
+            <h2 class="section-title">Conceptos Básicos de Redes</h2>
+            <p class="section-subtitle">Antes de configurar, es vital entender qué es una red y cómo se estructura. Pasa el cursor sobre las tarjetas.</p>
+
+            <div class="cards">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-icon">📡</div>
+                            <h3>Red de Cómputo</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Red de Cómputo</h3>
+                            <p>Conjunto de equipos conectados entre sí que comparten recursos, información y servicios.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-icon">📶</div>
+                            <h3>LAN</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>LAN</h3>
+                            <p>Local Area Network. Red de área local que cubre un espacio físico limitado como una casa u oficina.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-icon">📦</div>
+                            <h3>Paquete</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Paquete</h3>
+                            <p>Unidad de datos que viaja por la red. Contiene la información y la dirección IP de origen y destino.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-icon">🔌</div>
+                            <h3>Protocolo</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Protocolo</h3>
+                            <p>Reglas que permiten la comunicación entre dispositivos. El estándar principal es TCP/IP.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IPv4 Y CLASES DE RED -->
+    <section class="section section-alt" id="ipv4">
+        <div class="container">
+            <h2 class="section-title">IPv4 y Clases de Red</h2>
+            <p class="section-subtitle">La Dirección IPv4 es un número de 32 bits (4 octetos) que identifica cada dispositivo en la red. Haz clic en cada clase para ver más detalles.</p>
+
+            <div class="ipv4-intro">
+                <div class="ipv4-box">
+                    <h3>Estructura de una IPv4</h3>
+                    <div class="ip-address-display">
+                        <span class="ip-octet">192</span>.<span class="ip-octet">168</span>.<span class="ip-octet">1</span>.<span class="ip-octet">15</span>
+                    </div>
+                    <p>Cuatro números del 0 al 255 separados por puntos. Cada uno es un <strong>octeto</strong> (8 bits) para un total de 32 bits.</p>
+                </div>
+            </div>
+
+            <h3 class="sub-title">Clases de Direcciones IPv4</h3>
+            
+            <div class="elements-grid classes-grid">
+                <button class="element-card" data-element="classA">
+                    <span class="class-badge class-a" style="margin-bottom: 10px;">A</span>
+                    <h3>Clase A</h3>
+                    <span class="element-hint">Clic para más info</span>
+                </button>
+                <button class="element-card" data-element="classB">
+                    <span class="class-badge class-b" style="margin-bottom: 10px;">B</span>
+                    <h3>Clase B</h3>
+                    <span class="element-hint">Clic para más info</span>
+                </button>
+                <button class="element-card" data-element="classC">
+                    <span class="class-badge class-c" style="margin-bottom: 10px;">C</span>
+                    <h3>Clase C</h3>
+                    <span class="element-hint">Clic para más info</span>
+                </button>
+                <button class="element-card" data-element="classD">
+                    <span class="class-badge class-d" style="margin-bottom: 10px;">D</span>
+                    <h3>Clase D</h3>
+                    <span class="element-hint">Clic para más info</span>
+                </button>
+                <button class="element-card" data-element="classE">
+                    <span class="class-badge class-e" style="margin-bottom: 10px;">E</span>
+                    <h3>Clase E</h3>
+                    <span class="element-hint">Clic para más info</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIRECCIONAMIENTO IP -->
+    <section class="section" id="direccionamiento">
+        <div class="container">
+            <h2 class="section-title">Direccionamiento IP</h2>
+            <p class="section-subtitle">Datos y conceptos clave para asignar direcciones correctamente en una red.</p>
+
+            <div class="direccionamiento-grid">
+                <div class="info-block">
+                    <h3>¿Qué es el Direccionamiento IP?</h3>
+                    <p>Es el proceso de asignar una dirección lógica única a cada dispositivo de la red para que pueda enviar y recibir datos correctamente.</p>
+                </div>
+                <div class="info-block">
+                    <h3>IP Pública vs Privada</h3>
+                    <p><strong>Pública:</strong> Visible en Internet (asignada por el ISP).<br>
+                       <strong>Privada:</strong> Uso interno en la LAN (no enrutable en Internet).</p>
+                </div>
+                <div class="info-block">
+                    <h3>Rangos Privados (RFC 1918)</h3>
+                    <p><code>10.0.0.0</code> - <code>10.255.255.255</code><br>
+                       <code>172.16.0.0</code> - <code>172.31.255.255</code><br>
+                       <code>192.168.0.0</code> - <code>192.168.255.255</code></p>
+                </div>
+                <div class="info-block">
+                    <h3>IP Estática vs Dinámica</h3>
+                    <p><strong>Estática:</strong> Configurada manualmente (ideal para servidores e impresoras).<br>
+                       <strong>Dinámica:</strong> Asignada automáticamente por DHCP.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ELEMENTOS BÁSICOS (AHORA CON 8 TARJETAS INCLUYENDO MEDIOS Y GATEWAY) -->
+    <section class="section section-alt" id="elementos">
+        <div class="container">
+            <h2 class="section-title">Elementos Básicos de Configuración</h2>
+            <p class="section-subtitle">Componentes esenciales para una red pequeña, incluyendo los medios físicos y la puerta de enlace. Haz clic para ver detalles.</p>
+
+            <div class="elements-grid">
+                <button class="element-card" data-element="router">
+                    <span class="element-icon">📡</span>
+                    <h3>Router</h3>
+                    <span class="element-hint">Clic para más info</span>
+                </button>
+                <button class="element-card" data-element="switch">
+                    <span class="element-icon">🔀</span>
+                    <h3>Switch</h3>
+                    <span class="element-hint">Clic para más info</span>
+                </button>
+                <button class="element-card" data-element="ip">
+                    <span class="element-icon">🔢</span>
+                    <h3>Direccionamiento IP</h3>
+                    <span class="element-hint">Clic para más info</span>
+                </button>
+                <button class="element-card" data-element="dhcp">
+                    <span class="element-icon">⚙️</span>
+                    <h3>DHCP</h3>
+                    <span class="element-hint">Clic para más info</span>
+                </button>
+                <button class="element-card" data-element="dns">
+                    <span class="element-icon">🌍</span>
+                    <h3>DNS</h3>
+                    <span class="element-hint">Clic para más info</span>
+                </button>
+                <button class="element-card" data-element="wifi">
+                    <span class="element-icon">📶</span>
+                    <h3>Seguridad WiFi</h3>
+                    <span class="element-hint">Clic para más info</span>
+                </button>
+                <button class="element-card" data-element="medios">
+                    <span class="element-icon">🪢</span>
+                    <h3>Medios de Transmisión</h3>
+                    <span class="element-hint">Clic para más info</span>
+                </button>
+                <button class="element-card" data-element="gateway">
+                    <span class="element-icon">🚪</span>
+                    <h3>Gateway</h3>
+                    <span class="element-hint">Clic para más info</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL de elementos -->
+    <div class="modal" id="elementModal" aria-hidden="true">
+        <div class="modal-overlay" data-close-modal></div>
+        <div class="modal-box" role="dialog" aria-modal="true">
+            <button class="modal-close" data-close-modal aria-label="Cerrar">&times;</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- ARQUITECTURA interactiva y animada -->
+    <section class="section" id="arquitectura">
+        <div class="container">
+            <h2 class="section-title">Arquitectura de la Red Local</h2>
+            <p class="section-subtitle">Haz clic en "Simular Tráfico" para ver cómo viaja un paquete de datos desde la PC hasta Internet.</p>
+
+            <div class="architecture-new">
+                <!-- Nivel 1: Internet -->
+                <div class="arch-level">
+                    <div class="arch-node arch-internet" data-info="Internet (WAN): Red mundial a la que se conecta tu red local.">
+                        <span class="arch-icon">🌍</span>
+                        <span class="arch-label">Internet</span>
+                    </div>
+                </div>
+
+                <!-- Cable 1 -->
+                <div class="arch-cable" id="cable1">
+                    <div class="cable-line"></div>
+                </div>
+
+                <!-- Nivel 2: Router -->
+                <div class="arch-level">
+                    <div class="arch-node arch-router" data-info="Router: Enruta los datos entre la LAN e Internet. Aquí se configura el Gateway.">
+                        <span class="arch-icon">📡</span>
+                        <span class="arch-label">Router / Gateway</span>
+                    </div>
+                </div>
+
+                <!-- Cable 2 -->
+                <div class="arch-cable" id="cable2">
+                    <div class="cable-line"></div>
+                </div>
+
+                <!-- Nivel 3: Switch -->
+                <div class="arch-level">
+                    <div class="arch-node arch-switch" data-info="Switch: Conecta y distribuye los datos a los dispositivos locales.">
+                        <span class="arch-icon">🔀</span>
+                        <span class="arch-label">Switch</span>
+                    </div>
+                </div>
+
+                <!-- Nivel 4: Dispositivos (Cables ramificados) -->
+                <div class="arch-devices-container">
+                    <div class="arch-cable-branch" id="branch-pc">
+                        <div class="cable-line"></div>
+                        <div class="cable-horizontal"></div>
+                    </div>
+                    <div class="arch-cable-branch" id="branch-laptop">
+                        <div class="cable-line"></div>
+                        <div class="cable-horizontal"></div>
+                    </div>
+                    <div class="arch-cable-branch" id="branch-printer">
+                        <div class="cable-line"></div>
+                        <div class="cable-horizontal"></div>
+                    </div>
+                    <div class="arch-cable-branch" id="branch-mobile">
+                        <div class="cable-line"></div>
+                        <div class="cable-horizontal"></div>
+                    </div>
+                </div>
+
+                <div class="arch-devices">
+                    <div class="arch-node arch-device" data-info="PC de escritorio: Conectada por cable al switch.">
+                        <span class="arch-icon">💻</span>
+                        <span class="arch-label">PC</span>
+                    </div>
+                    <div class="arch-node arch-device" data-info="Laptop: Conectada al switch (cable o inalámbrica).">
+                        <span class="arch-icon">💻</span>
+                        <span class="arch-label">Laptop</span>
+                    </div>
+                    <div class="arch-node arch-device" data-info="Impresora de red: Comparte recursos en la LAN.">
+                        <span class="arch-icon">🖨️</span>
+                        <span class="arch-label">Impresora</span>
+                    </div>
+                    <div class="arch-node arch-device" data-info="Smartphone: Conectado vía WiFi al router/switch.">
+                        <span class="arch-icon">📱</span>
+                        <span class="arch-label">Móvil</span>
+                    </div>
+                </div>
+
+                <!-- Controles y Panel de Info -->
+                <div class="arch-controls">
+                    <button class="btn btn-simulate" id="simulateBtn">
+                        <span class="btn-icon">✨</span> Simular Tráfico de Datos
+                    </button>
+                    <div class="arch-info" id="archInfo">
+                        <span class="arch-info-icon">👉</span>
+                        <p>Selecciona un elemento del diagrama o simula el tráfico.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IPCONFIG - SIMULADOR -->
+    <section class="section section-alt" id="ipconfig">
+        <div class="container">
+            <h2 class="section-title">Simulador en Vivo: ipconfig</h2>
+            <p class="section-subtitle">Ejecuta el comando y observa cómo se muestra la configuración IP real de un equipo.</p>
+
+            <div class="terminal-wrapper">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-title">Símbolo del sistema — cmd.exe</span>
+                </div>
+                <div class="terminal-body" id="terminalBody">
+                    <div class="terminal-line">Microsoft Windows [Versión 10.0.19045.4291]</div>
+                    <div class="terminal-line">(c) Microsoft Corporation. Todos los derechos reservados.</div>
+                    <div class="terminal-line">&nbsp;</div>
+                    <div class="terminal-line" id="terminalOutput"></div>
+                </div>
+                <div class="terminal-actions">
+                    <button class="btn btn-terminal" id="runIpconfig">▶ Ejecutar comando ipconfig</button>
+                    <button class="btn btn-terminal btn-clear" id="clearIpconfig">🧹 Limpiar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 RedIPv4 · Guía de Configuración Básica</p>
+            <p>Hecho con HTML, CSS y JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
